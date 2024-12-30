@@ -45,7 +45,7 @@ vector<int> sampleArray(const vector<int>& arr, int K) {
     // Генерируем случайные индексы до тех пор, пока не наберём K уникальных
     while (selectedIndices.size() < K) { // O(K) в худшем случае, если K уникальных индексов не найдены сразу
         int randomIndex = rand() % arr.size(); // Генерируем случайный индекс; O(1)
-        selectedIndices.insert(randomIndex);    // Добавляем индекс в множество (дубликаты игнорируются); O(1) в среднем случае 
+        selectedIndices.insert(randomIndex);    // Добавляем индекс в множество (дубликаты игнорируются); O(N*log(N)) в среднем случае 
     }
 
     // Переносим выбранные элементы в конечный массив
